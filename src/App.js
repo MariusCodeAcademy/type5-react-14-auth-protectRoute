@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import LoginPage from './pages/LoginPage';
+import VipPage from './pages/VipPage';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         </Route>
         <Route path={'/login'}>
           <LoginPage />
+        </Route>
+        <Route path={'/vip'}>
+          <VipPage />
         </Route>
         <Route path={'*'}>
           <h2>Page not found</h2>
