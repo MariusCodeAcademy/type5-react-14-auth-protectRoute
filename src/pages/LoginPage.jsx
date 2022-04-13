@@ -1,8 +1,13 @@
+import { useContext } from 'react';
 import Container from './../components/UI/Container';
+import AuthContext from './../store/authContext';
+
 function LoginPage() {
+  const authCtx = useContext(AuthContext);
   function formHandler(e) {
     e.preventDefault();
     console.log('Logging in');
+    authCtx.login();
   }
   return (
     <Container>
