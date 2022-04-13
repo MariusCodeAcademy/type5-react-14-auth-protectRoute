@@ -16,6 +16,7 @@ function App() {
   function login() {
     console.log('App.js login');
     setIsUserLoggedIn(true);
+    // set LocalStorage value
   }
   function logout() {
     console.log('App.js logout');
@@ -35,7 +36,7 @@ function App() {
         <Switch>
           <ProtectedRoute path='/' exact className={'yes'} bubble='gum'>
             <h1>Home</h1>
-            <p>Welcome</p>
+            <p>Welcome {process.env.REACT_APP_MY_NAME} </p>
           </ProtectedRoute>
           <Route path={'/login'}>
             <LoginPage />
