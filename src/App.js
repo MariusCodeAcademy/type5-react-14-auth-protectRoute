@@ -11,7 +11,7 @@ import AuthContext from './store/authContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState(true);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   function login() {
     console.log('App.js login');
@@ -33,18 +33,16 @@ function App() {
       <div className='App'>
         <Header />
         <Switch>
-          <ProtectedRoute path='/'>
-            <h1>Home11</h1>
+          <ProtectedRoute path='/' exact className={'yes'} bubble='gum'>
+            <h1>Home</h1>
+            <p>Welcome</p>
           </ProtectedRoute>
-          {/* <Route path={'/'} exact>
-            {isUserLoggedIn ? <h1>Home</h1> : <NotLoggedIn />}
-          </Route> */}
           <Route path={'/login'}>
             <LoginPage />
           </Route>
-          <Route path={'/vip'}>
+          <ProtectedRoute path={'/vip'}>
             <VipPage />
-          </Route>
+          </ProtectedRoute>
           <Route path={'*'}>
             <h2>Page not found</h2>
           </Route>
