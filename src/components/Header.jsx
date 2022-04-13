@@ -4,7 +4,7 @@ function Header() {
   return (
     <header className='header'>
       <h2>System</h2>
-      <nav>
+      <nav className='main-nav'>
         <NavLink to={'/'}>Home</NavLink>
         <NavLink to={'/vip'}>Vip</NavLink>
         <NavLink to={'/login'}>Login</NavLink>
